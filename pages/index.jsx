@@ -9,11 +9,11 @@ import { fadeIn } from "../variants";
 const Home = () => {
   return (
     <div className="bg-primary/60 h-full">
-      {/* text */}
+      {/* Text */}
       <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
         <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
-          
-          {/* title */}
+
+          {/* Main Title */}
           <motion.h1
             variants={fadeIn("down", 0.2)}
             initial="hidden"
@@ -21,12 +21,16 @@ const Home = () => {
             exit="hidden"
             className="h1"
           >
-            Hi, I&apos;m <span className="text-accent">Syed Awais Gillani</span> <br />
-            Founder & CEO of <span className="text-accent">NexCore</span> <br />
-            & Agentic AI Expert
+            Hi, I&apos;m{" "}
+            <span className="text-accent">Muhammad Shaf</span>
+            <br />
+            Founder & CEO of{" "}
+            <span className="text-accent">ST-Solutions</span>
+            <br />
+            Software Architect & AI Builder
           </motion.h1>
 
-          {/* subtitle */}
+          {/* Introduction */}
           <motion.p
             variants={fadeIn("down", 0.3)}
             initial="hidden"
@@ -34,18 +38,19 @@ const Home = () => {
             exit="hidden"
             className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16 text-white/70"
           >
-            Hi, I&apos;m Syed Awais Gillani, Founder & CEO of NexCore. I specialize
-            in building intelligent AI automation systems, modern websites, and
-            robust software architectures for an international client base. I
-            don&apos;t just use existing tools; I build custom source code and
-            scalable applications from scratch. Passionate about driving global
-            digital transformation through autonomous workflows.
+            I&apos;m Muhammad Shaf, a Software Architect, AI Builder, and
+            Founder of ST-Solutions. I explore software architecture,
+            intelligent AI systems, automation, and product engineering to
+            transform ideas into practical digital solutions. My interests
+            also include cybersecurity, ethical hacking, and building
+            technology that solves real-world problems.
           </motion.p>
 
-          {/* btn */}
+          {/* Projects Button */}
           <div className="flex justify-center xl:hidden relative">
             <ProjectsBtn />
           </div>
+
           <motion.div
             variants={fadeIn("down", 0.4)}
             initial="hidden"
@@ -57,20 +62,21 @@ const Home = () => {
           </motion.div>
         </div>
       </div>
-      
-      {/* image - Permanently Merged */}
+
+      {/* Background and Avatar */}
       <div className="w-full h-full absolute right-0 bottom-0 pointer-events-none">
-        {/* bg img */}
+
+        {/* Background Image */}
         <div
           role="img"
           className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0 opacity-60"
-          aria-hidden
+          aria-hidden="true"
         />
 
-        {/* particles */}
+        {/* Particles */}
         <ParticlesContainer />
 
-        {/* avatar - Permanently Merged */}
+        {/* Avatar */}
         <motion.div
           variants={fadeIn("up", 0.5)}
           initial="hidden"

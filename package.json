@@ -1,11 +1,11 @@
 {
-  "name": "nexcore-portfolio",
+  "name": "muhammad-shaf-portfolio",
   "version": "1.0.1",
   "private": true,
   "author": {
-    "name": "Syed Awais Gillani"
+    "name": "Muhammad Shaf"
   },
-  "description": "Syed Awais Gillani, Founder & CEO of NexCore, builds intelligent AI automation systems, modern websites, and scalable software architectures for an international client base.",
+  "description": "Muhammad Shaf, Founder & CEO of ST-Solutions, Software Architect, and AI Builder, focuses on software architecture, AI systems, intelligent automation, product engineering, and cybersecurity.",
   "keywords": [
     "react",
     "next",
@@ -19,7 +19,14 @@
     "portfolio",
     "framer-motion",
     "3d-website",
-    "particle-effect"
+    "particle-effect",
+    "muhammad-shaf",
+    "st-solutions",
+    "software-architecture",
+    "artificial-intelligence",
+    "ai-automation",
+    "cybersecurity",
+    "product-engineering"
   ],
   "license": "MIT",
   "scripts": {

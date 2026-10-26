@@ -9,35 +9,37 @@ import { fadeIn } from "../../variants";
 
 export const aboutData = [
   {
-    title: "skills",
-    info: [
-      {
-        title: "Core: Web Development, Python, International Project Delivery",
-        icons: [FaReact, FaPython],
-      },
-      {
-        title:
-          "AI & Automation: Agentic AI Workflows, Autonomous Agents, Selenium, undetected_chromedriver",
-        icons: [FaPython],
-      },
-      {
-        title: "Data: Pandas, NumPy, Matplotlib",
-        icons: [FaPython],
-      },
-      {
-        title: "GUI / UI Frameworks: CustomTkinter, PyQt6, Ursina",
-        icons: [FaPython],
-      },
-    ],
-  },
-  {
-    title: "experience",
-    info: [
-      { title: "Founder & CEO of NexCore" },
-      { title: "Agentic AI & AI Automation" },
-      { title: "Custom Software & Web Development - International Clients" },
-    ],
-  },
+    
+  title: "skills",
+  info: [
+    {
+      title: "Core: Software Architecture, Web Development, Product Engineering",
+      icons: [FaReact],
+    },
+    {
+      title: "AI & Automation: AI Agents, Intelligent Workflows, Business Automation",
+      icons: [FaPython],
+    },
+    {
+      title: "Cybersecurity: Ethical Hacking, Cybersecurity Essentials",
+      icons: [FaPython],
+    },
+    {
+      title: "Product Development: SaaS, E-Commerce, UI/UX Design",
+      icons: [FaReact],
+    },
+  ],
+},
+{
+  title: "experience",
+  info: [
+    { title: "Founder & CEO of ST-Solutions" },
+    { title: "Software Architect & AI Builder" },
+    { title: "AI Systems & Automation Development" },
+    { title: "Cybersecurity Internship" },
+    { title: "Web Development — Approximately 5 Years" },
+  ],
+},
   {
     title: "education",
     info: [
@@ -49,7 +51,17 @@ export const aboutData = [
     info: [
       {
         title:
-          "Agentic AI course from Arfa Karim Tower Lahore",
+          "Generative AI (GenAI) — Saylani Mass IT Training (SMIT), Faisalabad, Pakistan",
+      },
+      {
+        title:
+          "Cybersecurity — Saylani Mass IT Training (SMIT), Faisalabad, Pakistan",
+      },
+      {
+        title: "Networking Basics — Cisco Networking Academy",
+      },
+      {
+        title: "Cybersecurity Essentials Certificate",
       },
     ],
   },
@@ -90,12 +102,13 @@ const About = () => {
             animate="show"
             className="max-w-[500px] mx-auto xl:mx-0 mb-4 xl:mb-8 px-2 xl:px-0 text-white/70"
           >
-            Hi, I&apos;m Syed Awais Gillani, Founder & CEO of NexCore. I specialize in
-            building intelligent AI automation systems, modern websites, and robust
-            software architectures for an international client base. I don&apos;t just use
-            existing tools; I build custom source code and scalable applications from
-            scratch. Passionate about driving global digital transformation through
-            autonomous workflows.
+           Hi, I&apos;m Muhammad Shaf, Founder &amp; CEO of ST-Solutions. I specialize in
+           designing software architecture, intelligent AI systems, automation, and
+           digital products for growing businesses. I don&apos;t just build websites; I
+            engineer complete, dependable systems from scratch—where the interface,
+           backend, APIs, data, authentication, and cybersecurity work together as one
+           product. Passionate about driving digital transformation through AI agents,
+           ethical hacking, and responsible technology.
           </motion.p>
 
           {/* ✅ Glassy Counters */}

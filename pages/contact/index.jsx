@@ -42,10 +42,36 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: <FaWhatsapp />, label: 'WhatsApp', value: '03257109880', link: 'https://wa.me/923257109880' },
-    { icon: <FaInstagram />, label: 'Instagram', value: '@nexcore.i', link: 'https://www.instagram.com/nexcore.i?igsi=MWE1ejQ5ODM2NzU0Mg==' },
-    { icon: <FaGithub />, label: 'GitHub', value: '@rashidgillani490-hash', link: 'https://github.com/rashidgillani490-hash' },
-    { icon: <FaEnvelope />, label: 'Email', value: 'rashidgillani490@gmail.com', link: 'mailto:rashidgillani490@gmail.com' }
+   {
+  icon: <FaWhatsapp />,
+  label: 'WhatsApp',
+  value: 'WhatsApp',
+  link: 'https://wa.me/923257263417'
+},
+{
+  icon: <FaInstagram />,
+  label: 'Instagram',
+  value: '@mehar_shaf98',
+  link: 'https://www.instagram.com/mehar_shaf98/'
+},
+{
+  icon: <FaGithub />,
+  label: 'GitHub',
+  value: 'shaftech0777',
+  link: 'https://github.com/shaftech0777'
+},
+{
+  icon: <FaEnvelope />,
+  label: 'Email',
+  value: 'shaftech0777@gmail.com',
+  link: 'mailto:shaftech0777@gmail.com'
+},
+{
+  icon: <FaLinkedin />,
+  label: 'LinkedIn',
+  value: 'muhammad-shaf',
+  link: 'https://www.linkedin.com/in/muhammad-shaf/'
+}
   ];
 
   return (

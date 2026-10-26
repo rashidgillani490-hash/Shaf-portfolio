@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Nav from "../components/Nav";
 import TopLeftImg from "../components/TopLeftImg";
 
-// setup font
+// Setup font
 const sora = Sora({
   subsets: ["latin"],
   variable: "--font-sora",
@@ -17,26 +17,38 @@ const Layout = ({ children }) => {
     <div
       className={`page bg-site text-white bg-cover bg-no-repeat ${sora.variable} font-sora relative overflow-y-auto`}
     >
-      {/* metadata */}
       <Head>
-        <title>Syed Awais Gillani | Founder & CEO of NexCore | Agentic AI Expert</title>
+        <title>
+          Muhammad Shaf | Founder & CEO of ST-Solutions | Software Architect
+          & AI Builder
+        </title>
+
         <meta
           name="description"
-          content="Syed Awais Gillani, Founder & CEO of NexCore, builds intelligent AI automation systems, modern websites, and scalable software architectures for an international client base."
+          content="Muhammad Shaf is the Founder & CEO of ST-Solutions, focused on software architecture, AI systems, intelligent automation, product engineering, and cybersecurity."
         />
+
         <meta
           name="keywords"
-          content="react, next, nextjs, javascript, portfolio, framer-motion, agentic AI, AI automation, autonomous workflows, NexCore, full-stack, software architecture"
+          content="Muhammad Shaf, ST-Solutions, Software Architect, AI Builder, Artificial Intelligence, AI Automation, Cybersecurity, Product Engineering, Web Development"
         />
-        <meta name="author" content="Syed Awais Gillani" />
+
+        <meta name="author" content="Muhammad Shaf" />
         <meta name="theme-color" content="#a78bfa" />
+
+        <meta property="og:title" content="Muhammad Shaf | Software Architect & AI Builder" />
+        <meta
+          property="og:description"
+          content="Explore Muhammad Shaf's work in software architecture, AI systems, automation, product engineering, and cybersecurity."
+        />
+        <meta property="og:type" content="website" />
       </Head>
 
       <TopLeftImg />
       <Nav />
       <Header />
 
-      {/* main content */}
+      {/* Main content */}
       <div className="pt-20 xl:pt-28 pb-16 min-h-screen">
         {children}
       </div>
