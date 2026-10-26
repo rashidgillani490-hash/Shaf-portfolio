@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { BsArrowRight } from "react-icons/bs";
 import { FaWhatsapp, FaInstagram, FaGithub, FaEnvelope } from "react-icons/fa";
@@ -7,10 +8,10 @@ import { useState } from "react";
 const Contact = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -19,182 +20,193 @@ const Contact = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    setIsLoading(true);
 
-    if (!formData.name || !formData.email || !formData.message) {
-      alert('Please fill in all required fields.');
-      setIsLoading(false);
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      alert("Please fill in all required fields.");
       return;
     }
 
-    setTimeout(() => {
-      alert('Thank you! I will get back to you soon.');
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: '',
-      });
-      setIsLoading(false);
-    }, 1000);
+    setIsLoading(true);
 
-    console.log('Form Data:', formData);
+    // Opens the visitor's email application with the message prepared.
+    const recipient = "shaftech0777@gmail.com";
+    const subject = encodeURIComponent(
+      formData.subject.trim() || `Portfolio inquiry from ${formData.name}`
+    );
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
+    );
+
+    window.location.href = `mailto:${recipient}?subject=${subject}&body=${body}`;
+
+    setIsLoading(false);
   };
 
   const contactInfo = [
-   {
-  icon: <FaWhatsapp />,
-  label: 'WhatsApp',
-  value: 'WhatsApp',
-  link: 'https://wa.me/923257263417'
-},
-{
-  icon: <FaInstagram />,
-  label: 'Instagram',
-  value: '@mehar_shaf98',
-  link: 'https://www.instagram.com/mehar_shaf98/'
-},
-{
-  icon: <FaGithub />,
-  label: 'GitHub',
-  value: 'shaftech0777',
-  link: 'https://github.com/shaftech0777'
-},
-{
-  icon: <FaEnvelope />,
-  label: 'Email',
-  value: 'shaftech0777@gmail.com',
-  link: 'mailto:shaftech0777@gmail.com'
-},
-{
-  icon: <FaLinkedin />,
-  label: 'LinkedIn',
-  value: 'muhammad-shaf',
-  link: 'https://www.linkedin.com/in/muhammad-shaf/'
-}
+    {
+      icon: <FaWhatsapp />,
+      label: "WhatsApp",
+      value: "Chat with me",
+      link: "https://wa.me/923257263417",
+    },
+    {
+      icon: <FaInstagram />,
+      label: "Instagram",
+      value: "@mehar_shaf98",
+      link: "https://www.instagram.com/mehar_shaf98/",
+    },
+    {
+      icon: <FaGithub />,
+      label: "GitHub",
+      value: "shaftech0777",
+      link: "https://github.com/shaftech0777",
+    },
+    {
+      icon: <FaEnvelope />,
+      label: "Email",
+      value: "shaftech0777@gmail.com",
+      link: "mailto:shaftech0777@gmail.com",
+    },
   ];
 
   return (
     <div className="h-full bg-primary/30">
-      <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
-        <div className="flex flex-col w-full max-w-[700px]">
+      <div className="container mx-auto flex h-full items-center justify-center py-32 text-center xl:text-left">
+        <div className="flex w-full max-w-[700px] flex-col">
           <motion.h2
             variants={fadeIn("up", 0.2)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="h2 text-center mb-4"
+            className="h2 mb-4 text-center"
           >
-            Let&apos;s <span className="text-accent">Connect.</span>
+            Let's <span className="text-accent">Connect.</span>
           </motion.h2>
-          
+
           <motion.p
             variants={fadeIn("up", 0.3)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="text-center text-white/60 mb-12"
+            className="mb-12 text-center text-white/60"
           >
             Have a project in mind or want to collaborate? Reach out to me!
           </motion.p>
 
-          {/* ✅ Glassy Contact Cards */}
+          {/* Contact Cards */}
           <motion.div
             variants={fadeIn("up", 0.35)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="grid grid-cols-2 gap-4 mb-12"
+            className="mb-12 grid grid-cols-1 gap-4 sm:grid-cols-2"
           >
-            {contactInfo.map((info, index) => (
+            {contactInfo.map((info) => (
               <a
-                key={index}
+                key={info.label}
                 href={info.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-card rounded-xl p-4 text-center group hover:bg-white/10 transition-all duration-500 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/10"
+                target={info.link.startsWith("mailto:") ? undefined : "_blank"}
+                rel={
+                  info.link.startsWith("mailto:")
+                    ? undefined
+                    : "noopener noreferrer"
+                }
+                aria-label={`${info.label}: ${info.value}`}
+                className="glass-card group rounded-xl p-4 text-center transition-all duration-500 hover:-translate-y-2 hover:bg-white/10 hover:shadow-2xl hover:shadow-accent/10"
               >
-                <div className="text-3xl text-accent group-hover:scale-110 transition-transform duration-500 mb-2">
+                <div className="mb-2 text-3xl text-accent transition-transform duration-500 group-hover:scale-110">
                   {info.icon}
                 </div>
-                <p className="text-xs text-white/40 uppercase tracking-widest">{info.label}</p>
-                <p className="text-white text-sm font-medium truncate group-hover:text-accent transition-colors">
+                <p className="text-xs uppercase tracking-widest text-white/40">
+                  {info.label}
+                </p>
+                <p className="truncate text-sm font-medium text-white transition-colors group-hover:text-accent">
                   {info.value}
                 </p>
               </a>
             ))}
           </motion.div>
 
-          {/* ✅ Glassy Form */}
+          {/* Contact Form */}
           <motion.form
             variants={fadeIn("up", 0.4)}
             initial="hidden"
             animate="show"
             exit="hidden"
-            className="glass-card rounded-xl p-8 flex flex-col gap-6 w-full mx-auto"
+            className="glass-card mx-auto flex w-full flex-col gap-6 rounded-xl p-6 sm:p-8"
             onSubmit={handleSubmit}
-            autoComplete="off"
-            autoCapitalize="off"
+            autoComplete="on"
             name="contact"
           >
-            <div className="flex gap-x-6 w-full">
-              <input type="hidden" name="form-name" value="contact" />
+            <div className="flex w-full flex-col gap-6 sm:flex-row">
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                className="input bg-white/5 border-white/10 focus:border-accent/50"
+                aria-label="Your Name"
+                className="input min-w-0 flex-1 border-white/10 bg-white/5 focus:border-accent/50"
                 value={formData.name}
                 onChange={handleChange}
                 disabled={isLoading}
                 required
               />
+
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
-                className="input bg-white/5 border-white/10 focus:border-accent/50"
+                aria-label="Your Email"
+                className="input min-w-0 flex-1 border-white/10 bg-white/5 focus:border-accent/50"
                 value={formData.email}
                 onChange={handleChange}
                 disabled={isLoading}
                 required
               />
             </div>
+
             <input
               type="text"
               name="subject"
-              placeholder="Subject"
-              className="input bg-white/5 border-white/10 focus:border-accent/50"
+              placeholder="Subject (optional)"
+              aria-label="Subject"
+              className="input border-white/10 bg-white/5 focus:border-accent/50"
               value={formData.subject}
               onChange={handleChange}
               disabled={isLoading}
             />
+
             <textarea
               name="message"
               placeholder="Your Message..."
-              className="textarea bg-white/5 border-white/10 focus:border-accent/50"
+              aria-label="Your Message"
+              rows={5}
+              className="textarea border-white/10 bg-white/5 focus:border-accent/50"
               value={formData.message}
               onChange={handleChange}
               disabled={isLoading}
               required
             />
-            
-            {/* ✅ Glassy Button */}
+
             <motion.button
               type="submit"
-              className="glass-card rounded-full border border-white/10 max-w-[170px] px-8 py-3 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent/50 hover:bg-accent/10 group"
               disabled={isLoading}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              className="glass-card group relative flex max-w-[190px] items-center justify-center overflow-hidden rounded-full border border-white/10 px-8 py-3 transition-all duration-300 hover:border-accent/50 hover:bg-accent/10 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              <span className="group-hover:-translate-y-[120%] group-hover:opacity-0 transition-all duration-500 text-white/80">
-                {isLoading ? 'Sending...' : 'Send Message'}
+              <span className="text-white/80 transition-all duration-500 group-hover:-translate-y-[120%] group-hover:opacity-0">
+                {isLoading ? "Opening Email..." : "Send Message"}
               </span>
+
               <BsArrowRight
-                className="-translate-y-[120%] opacity-0 group-hover:flex group-hover:-translate-y-0 group-hover:opacity-100 transition-all duration-300 absolute text-[22px] text-accent"
-                aria-hidden
+                className="absolute translate-y-3 text-[22px] text-accent opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+                aria-hidden="true"
               />
             </motion.button>
+
+            <p className="text-xs text-white/40">
+              Submitting opens your email application with the message prepared.
+            </p>
           </motion.form>
         </div>
       </div>
