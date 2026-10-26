@@ -80,7 +80,7 @@ const Contact = () => {
             exit="hidden"
             className="h2 mb-4 text-center"
           >
-            Let's <span className="text-accent">Connect.</span>
+            Let&apos;s <span className="text-accent">Connect.</span>
           </motion.h2>
 
           <motion.p
