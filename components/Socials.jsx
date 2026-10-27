@@ -9,22 +9,22 @@ import {
 export const socialData = [
   {
     name: "WhatsApp",
-    link: "https://wa.me/923257109880",
+    link: "https://wa.me/923257263417",
     Icon: RiWhatsappLine,
   },
   {
     name: "Instagram",
-    link: "https://www.instagram.com/nexcore.i?igsi=MTZxeDQybGFoZTF2Zg==",
+    link: "https://www.instagram.com/mehar_shaf98/",
     Icon: RiInstagramLine,
   },
   {
     name: "GitHub",
-    link: "https://github.com/rashidgillani490-hash",
+    link: "https://github.com/shaftech0777",
     Icon: RiGithubLine,
   },
   {
     name: "Email",
-    link: "mailto:rashidgillani490@gmail.com",
+    link: "mailto:shaftech0777@gmail.com",
     Icon: RiMailLine,
   },
 ];
@@ -32,16 +32,17 @@ export const socialData = [
 const Socials = () => {
   return (
     <div className="flex items-center gap-x-5 text-lg">
-      {socialData.map((social, i) => (
+      {socialData.map((social) => (
         <Link
-          key={i}
+          key={social.name}
           title={social.name}
           href={social.link}
           target="_blank"
           rel="noreferrer noopener"
-          className="hover:text-accent transition-all duration-300"
+          aria-label={social.name}
+          className="transition-all duration-300 hover:text-accent"
         >
-          <social.Icon aria-hidden />
+          <social.Icon aria-hidden="true" />
           <span className="sr-only">{social.name}</span>
         </Link>
       ))}
